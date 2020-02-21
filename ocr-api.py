@@ -1,11 +1,9 @@
 import http.client, urllib.request, urllib.parse, urllib.error, base64, json
-
-# These are my credentials
 SUBSCRIPTION_KEY = '<key here>'
 ENDPOINT = '<name here>.cognitiveservices.azure.com'
 
 # Change this to other images
-IMAGE_URL = 'https://www.elearnmarkets.com/blog/wp-content/uploads/2016/01/Bearer-cheque-1024x460.jpg'
+IMAGE_URL = '<URL here>'
 
 headers = {
     # Request headers
@@ -33,8 +31,6 @@ try:
 except Exception as e:
     print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
-####################################
-
 if opLocation:
     headers = {
         # Request headers
@@ -52,10 +48,8 @@ if opLocation:
     except Exception as e:
         print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
-####################################
 
 ocrResult = json.loads(data)
 print(ocrResult)
-# You have to precess ocrResult from here on. Here, I print all the lines 
 #for line in ocrResult['recognitionResults'][0]['lines']:
  #   print(line['text'])
